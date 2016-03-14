@@ -28,10 +28,10 @@
       var deferred = $q.defer();
       $http.post('/api/todos/', todo).
       success(function(data) {
-          deferred.resolve(data);
+        deferred.resolve(data);
       }).
       error(function(reason) {
-          deferred.reject(reason);
+        deferred.reject(reason);
       });
       return deferred.promise
     }
@@ -41,10 +41,10 @@
 
       $http.put('/api/todos/' + id, updateData).
       success(function(data) {
-          deferred.resolve(data);
+        deferred.resolve(data);
       }).
       error(function(reason) {
-          deferred.reject(reason);
+        deferred.reject(reason);
       });
       return deferred.promise
     }
@@ -53,10 +53,10 @@
       var deferred = $q.defer();
       $http.delete('/api/todos/' + id).
       success(function(data) {
-          deferred.resolve(data);
+        deferred.resolve(data);
       }).
       error(function(reason) {
-          deferred.reject(reason);
+        deferred.reject(reason);
       });
       return deferred.promise
     }
