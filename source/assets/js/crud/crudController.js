@@ -29,12 +29,21 @@
       });
     };
 
+    // edit a Todo
+    vm.editTodo = function(id, txt, done) {
+      vm.formData.id = id;
+      vm.formData.text = txt;
+      vm.formData.done = done;
+    };
+
     // Update a Todo
-    vm.editTodo = function(id, txt, isDone) {
-      var updateData = {"text":txt, "done": isDone};
+    vm.updateTodo = function() {
+      var updateData = {"text":vm.formData.text, "done": vm.formData.done};
+      var id = vm.formData.id;
+
       crudService.updateTodo(id, updateData).then(function(answer) {
         vm.todos = answer;
-        vm.formData.text = txt;
+        vm.formData.text = '';
       }, function(error) {
         console.log("OOPS Error Updating!!!! " + JSON.stringify(error));
       });

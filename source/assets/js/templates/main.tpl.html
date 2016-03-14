@@ -9,7 +9,7 @@
         <div ng-repeat="todo in main.todos track by $index">
           <button class="btn-xs" ng-click="main.deleteTodo(todo._id)">X</button>
           <input type="checkbox" ng-model="todo.done">
-          <input type="text" name="ibTodo" ng-model= "todo.text" ng-bind="main.todo.text" ng-class="{'doneClass': todo.done, 'notDoneClass': !todo.done }">
+          <input type="text" name="ibTodo" ng-model="todo.text" ng-bind="main.todo.text" ng-class="{'doneClass': todo.done, 'notDoneClass': !todo.done }">
           <button class="btn btn-primary btn-xs pull-right" ng-click="main.editTodo(todo._id, todo.text, todo.done)">Edit</button>
         </div>
       </div>
@@ -18,9 +18,12 @@
       <div class="col-sm-8 col-sm-offset-2 text-center">
         <form name="fmCreateTodo" novalidate>
           <div class="form-group">
+            <input type="hidden" ng-model="main.formData.done" />
+            <input type="hidden" ng-model="main.formData.id" />
             <input type="text" class="form-control input-lg text-center" placeholder="Enter Stuff.." ng-model="main.formData.text" ng-required="true">
           </div>
           <button type="submit" class="btn btn-primary btn-lg" ng-disabled="fmCreateTodo.$invalid" ng-click="main.createTodo()">Create</button>
+          <button type="submit" class="btn btn-primary btn-lg" ng-click="main.updateTodo()">Update</button>
         </form>
       </div>
     </div>
