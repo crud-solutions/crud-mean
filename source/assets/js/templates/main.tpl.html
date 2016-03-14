@@ -1,0 +1,36 @@
+<section id="secTodoApp">
+  <div class="container-fluid">
+    <!-- Page header -->
+    <div class="jumbotron text-center">
+        <h1>CRUD Application <span class="label label-info" ng-bind="main.todos.length"></span></h1>
+        <p>Create Read Update Delete</p>
+    </div>
+    <!-- List of Todo's -->
+    <div id="todo-list" class="row ">
+      <div class="col-md-4 col-sm-6 col-xs-12 col-center-block">
+        <!-- Loop through todos -->
+        <div ng-repeat="todo in main.todos track by $index">
+          <button class="btn-xs" ng-click="main.deleteTodo(todo._id)">X</button>
+          <input type="checkbox" ng-model="todo.done">
+          <input type="text" name="ibTodo" ng-model= "todo.text" ng-bind="main.todo.text" ng-class="{'doneClass': todo.done, 'notDoneClass': !todo.done }">
+          <button class="btn btn-primary btn-xs pull-right" ng-click="main.editTodo(todo._id, todo.text, todo.done)">Update</button>
+        </div>
+      </div>
+    </div>
+    <!-- Form to create Todo -->
+    <div id="todo-form" class="row">
+      <div class="col-sm-8 col-sm-offset-2 text-center">
+        <form name="fmCreateTodo" novalidate>
+          <div class="form-group">
+            <input type="text" class="form-control input-lg text-center" placeholder="Enter Stuff.." ng-model="main.formData.text" ng-required="true">
+          </div>
+          <!--
+          Form will be invalid unless the input box has content
+          only then will the Button become active
+          -->
+          <button type="submit" class="btn btn-primary btn-lg" ng-disabled="fmCreateTodo.$invalid" ng-click="main.createTodo()">Create</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section> <!-- @END/ section -->
