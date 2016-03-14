@@ -1,0 +1,38 @@
+@import "_bootstrap";
+
+html {
+	overflow-y:scroll;
+}
+
+body {
+	padding-top:50px;
+}
+
+#todo-list {
+	margin-bottom:30px;
+}
+
+#todo-form {
+	margin-bottom:50px;
+}
+
+input {
+    border: none;
+}
+
+
+.doneClass {
+    text-decoration: line-through;
+    color: red;
+}
+
+.notDoneClass {
+    color: green;
+}
+
+.col-center-block {
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
