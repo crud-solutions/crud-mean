@@ -24,7 +24,7 @@
             <input type="text" class="form-control input-lg text-center" placeholder="" ng-model="main.formData.text" ng-required="true">
           </div>
           <button type="submit" class="btn btn-primary btn-lg" ng-disabled="fmCreateTodo.$invalid" ng-click="main.createTodo()">Create</button>
-          <button type="submit" class="btn btn-primary btn-lg" ng-click="main.updateTodo()">Update</button>
+          <button type="submit" class="btn btn-primary btn-lg" ng-disabled="!main.edit && fmCreateTodo.$invalid" ng-click="main.updateTodo()">Update</button>
         </form>
       </div>
     </div>

@@ -11,6 +11,7 @@
     var vm = this;
 
     vm.formData = {};
+    vm.edit = false;
 
     // Get Todos
     crudService.getTodos().then(function(answer) {
@@ -24,6 +25,7 @@
       crudService.createTodo(vm.formData).then(function(answer) {
         vm.todos = answer;
         vm.formData.text = '';
+        vm.edit = false;
       }, function(error) {
         console.log("Error Creating Todo!!!! " + JSON.stringify(error));
       });
@@ -31,6 +33,7 @@
 
     // edit a Todo
     vm.editTodo = function(id, txt, done) {
+      vm.edit = true;
       vm.formData.id = id;
       vm.formData.text = txt;
       vm.formData.done = done;
@@ -44,6 +47,7 @@
       crudService.updateTodo(id, updateData).then(function(answer) {
         vm.todos = answer;
         vm.formData.text = '';
+        vm.edit = false;
       }, function(error) {
         console.log("OOPS Error Updating!!!! " + JSON.stringify(error));
       });
