@@ -1,7 +1,7 @@
 # CRUD MEAN
 
 [![licence mit](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](http://hemersonvianna.mit-license.org/)
-[![issues](https://img.shields.io/github/issues/crud-solutions/crud-mean.svg?style=flat-square)](https://github.com/crud-solutions/crud-mean/issues)
+[![issues](https://img.shields.io/github/issues/descco-tools/crud-mean.svg?style=flat-square)](https://github.com/descco-tools/crud-mean/issues)
 
 ## Instalation
 
@@ -36,7 +36,7 @@ node server.js
 
 ## Log
 
-Check [Releases](https://github.com/crud-solutions/crud-mean/releases) for detailed changelog.
+Check [Releases](https://github.com/descco-tools/crud-mean/releases) for detailed changelog.
 
 ## License
 
