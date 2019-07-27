@@ -1,6 +1,6 @@
 {
   "name": "crud-mean",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "CRUD MEAN",
   "main": "node server.js",
   "author": "Hemerson Vianna <hemerson.lourenco@gmail.com> (http://hemersonvianna.io)",
